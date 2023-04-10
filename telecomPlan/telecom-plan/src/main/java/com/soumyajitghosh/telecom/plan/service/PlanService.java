@@ -1,0 +1,38 @@
+package com.soumyajitghosh.telecom.plan.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.soumyajitghosh.telecom.plan.model.PlanDetails;
+import com.soumyajitghosh.telecom.plan.repository.PlanRepo;
+
+@Service
+public class PlanService {
+	
+	@Autowired
+	PlanRepo planRepo;
+
+	public PlanDetails addNewPlan(PlanDetails planDetails) {
+		return planRepo.save(planDetails);
+		
+		//return planRepo.findphone(1);
+	}
+	
+	public String updatePlan(PlanDetails plan,long id) {
+		PlanDetails oldPlan = planRepo.findById(id);
+		oldPlan.setPlanDetails(plan.getPlanDetails());
+		planRepo.save(oldPlan);
+		return "Plan Details updated successfully!";
+	}
+
+	public List<PlanDetails> allPlans() {
+		return planRepo.findAll();
+	}
+	
+	public PlanDetails getPlanById(long id) {
+		return planRepo.findById(id);
+	}
+
+}

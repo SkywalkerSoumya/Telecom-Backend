@@ -1,0 +1,5 @@
+package com.soumyajitghosh.telecom.user.dto;
+
+public class BroadbandPlansDTO {
+
+}

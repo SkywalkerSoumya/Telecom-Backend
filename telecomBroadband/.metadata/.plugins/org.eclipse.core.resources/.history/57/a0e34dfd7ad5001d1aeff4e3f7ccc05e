@@ -1,0 +1,5 @@
+package com.soumyajitghosh.telecom.broadband.repository;
+
+public interface BroadbandRepo {
+
+}

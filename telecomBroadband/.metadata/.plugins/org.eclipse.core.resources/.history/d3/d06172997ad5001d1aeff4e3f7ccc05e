@@ -1,0 +1,5 @@
+package com.soumyajitghosh.telecom.broadband.model;
+
+public class BroadbandPlans {
+
+}
